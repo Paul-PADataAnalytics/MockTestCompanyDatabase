@@ -41,6 +41,24 @@ def getTestCentre(city):
       break
     return output
 
+def getCertPrice(certificationID):
+    cursor.execute('SELECT TestCertifcationPrice FROM testcertification Where idTestCertification = %(certid)s', {'certid': certificationID}, False)
+    output = 0
+    for row in cursor:
+      output = row['TestCertifcationPrice']
+      break
+    return output
+
+def getResitPrice(certificationPartID):
+    cursor.execute('SELECT TestCertificationRetestPrice FROM testcertificationpart where idTestCertificationPart = %(certpart)s', {'certpart': certificationPartID}, False)
+    output = 0
+    for row in cursor:
+      output = row['TestCertificationRetestPrice']
+      break
+    return output
+
 testdata = {'city': 'Tamvo', 'country': 'Loytehroa'}
 #print(getRandomCustomerIDFromCity(testdata))
-print(getTestCentre(testdata))
+#print(getTestCentre(testdata))
+#print(getCertPrice(4))
+#print(getResitPrice(27))

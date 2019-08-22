@@ -1,13 +1,13 @@
 import datetime as dt
 import dateutil as du
 
-presentedIdentificationValidity =  {'Resyurdui': 0.1,
-                                    'Loytehroa': 0.01,
-                                    'Pufyoffio': 0.2,
-                                    'Semsortee': 0.07,
-                                    'Gotyadgee': 0.05,
-                                    'Fopliwfoo': 0.1,
-                                    'Tilpetpae': 0.125}
+customerGeneralShittyness =  {'Resyurdui': 0.1,
+								'Loytehroa': 0.01,
+								'Pufyoffio': 0.2,
+								'Semsortee': 0.07,
+								'Gotyadgee': 0.05,
+								'Fopliwfoo': 0.1,
+								'Tilpetpae': 0.125}
 
 countryLocales = {'Resyurdui': 'hr_HR',
 				  'Loytehroa': 'dk_DK',
@@ -17,6 +17,7 @@ countryLocales = {'Resyurdui': 'hr_HR',
 				  'Fopliwfoo': 'en_GB',
 				  'Tilpetpae': 'el_GR'}
 
+#Customers means yearly customers.
 geography = {		
 	'Henna': {	'city': 'Henna', 'country': 'Resyurdui', 'population': '2406219', 'customers': 192498},
 	'Jilli': {	'city': 'Jilli', 'country': 'Loytehroa', 'population': '1069431', 'customers': 106943},
@@ -43,3 +44,6 @@ geography = {
 
 DateStart = dt.date(2016,1,1)
 DateEnd = dt.date(2018,12,31)
+
+presentedIdentificationTypes = ['Passport', 'Photo ID', 'Driving Licence', 'Government Papers', 'Visa', 'Other']
+customerPaymentMethods = ['Debit Card', 'Money Order', 'Credit Order', 'Credit Card', 'Postal Order', 'Cash']
