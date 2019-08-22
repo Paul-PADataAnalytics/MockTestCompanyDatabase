@@ -1,6 +1,8 @@
 import unittest
 import Simulation as sim
 
+sim.configState = 'Test'
+
 city = {'city': 'c', 'country': 'defg'}
 
 class FakeFaker:
