@@ -1,6 +1,8 @@
 import random
 import world as world
 import database as DB
+import datetime as dt
+import random
 
 def newAddress(g, city):
     pc = g.zipcode() 
@@ -17,31 +19,31 @@ def newCustomer(g, city):
     email = custname.replace(' ','.') + str(g.random_digit()) + '@' + g.domain_name()
     return custname, addr, city['city'], pc, city['country'], email
 
-def newIDRequest(customerID, VisitID):
-    #TODO: Implement new ID request
-    presentedIdentificationTypes = ['Passport', 'Photo ID', 'Driving Licence', 'Government Papers', 'Visa', 'Other']
-    visitSuccess = True
-    presentedID = random.choice(world.presentedIdentificationTypes)
-    print(world.presentedIdentificationValidity[city['country']])
+def newIDRequest(VisitID, shittynessfactor):
+    if(random.random()<shittynessfactor):
+        visitSuccess = True
+    else:
+        visitSuccess = False
+        notes = random.choice(world.badIDNotes)
+        presentedID = random.choice(world.presentedIdentificationTypes)
+    DB.newPresentedID(VisitID,presentedID,visitSuccess,notes)
     return visitSuccess
-
-def newBooking(customerID, testCentreID, testCertificationPart, simulationDate):
-    #TODO: implement new Booking
-    #return DB.insertNewBooking(customerID, testCentreID, testCertificationPart, simulationDate)
-    print('newBooking')
     
 def newCustomerPayment(CustomerBooking, value):
-    #TODO: Implement payment types, selection and success or failure with external ID
     customerPaymentAmount = value
-    customerPaymentMethods = ['Debit Card', 'Money Order', 'Credit Order', 'Credit Card', 'Postal Order', 'Cash']
-    customerPaymentResult = ''
-    customerPaymentExternalID = ''
+    randomPaymentType = random.choice(world.customerPaymentMethods)
+    customerPaymentResult = random.choice(['Success','Success','Success','Success','Success','Success','Success','Failure'])
+    customerPaymentExternalID = 'abc123456789' #TODO: make a random string to a mask using Faker
+    DB.newPayment(customerPaymentAmount, CustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID)
+    return newCustomerPayment
 
-def newCustomerVisit(bookingID):
-    #TODO: Implement Visit
-    customerVisitArrivalTime = 0
-    customerVisitArrivalOutcome = 0
+def newCustomerVisit(bookingID, date):
+    customerVisitArrivalTime = dt.datetime(date.year,date.month,date.day, (8+random.randrange(0,8,1)), random.randrange(0,4,1)*15)
+    return DB.newVisit(bookingID,customerVisitArrivalTime)
 
 def newCustomerTestPartResult(idCustomerVisit):
     #TODO: Implement TestPartResults
-    customerTestPartResultOutcome = ''
+    customerTestPartResultOutcome = random.choice(['Success','Success','Success','Success','Success','Success','Success','Failure'])
+    DB.newTestOutcome
+
+print(newCustomerVisit(1,dt.date(2019,1,1)))

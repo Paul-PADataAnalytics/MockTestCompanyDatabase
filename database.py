@@ -27,12 +27,34 @@ def getRandomCustomerIDFromCity(city):
       break
     return output
 
-def newPayment(customerID, bookingID):
-  print(1)
+def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
+    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s ,%s)'
+    cursor.execute(cmd, (customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID), False)
+    return cursor._last_insert_id  
+
+def newPresentedID(visitID, atype, valid, comments):
+    cmd = 'INSERT INTO presentedidentification (`idCustomerVisit`, `PresentedIdentificationType`, `PresentedIdentificationValid`, `PresentedIdentificationComments`) VALUES (%s, %s, %s ,%s)'
+    cursor.execute(cmd, (visitID, atype, valid, comments), False)
+    return cursor._last_insert_id
+
+def newVisit(bookingID, arrivalDateTime):
+    cmd = 'INSERT INTO customervisit (`CustomerVisitArrivalTime`, `idCustomerBooking`) VALUES (%s, %s)'
+    cursor.execute(cmd, (bookingID, arrivalDateTime), False)
+    return cursor._last_insert_id
+
+def newTestOutcome(visitID, outcome):
+    cmd = 'INSERT INTO customertestpartresult (`idCustomerVisit`, `CustomerTestPartResultOutcome`) VALUES (%s, %s)'
+    cursor.execute(cmd, (visitID, outcome), False)
+    return cursor._last_insert_id
 
 def getCertificationNotTaken(customerID):
     print(1)
 
+def getTestCertParts(testCertification):
+    cmd = 'SELECT * FROM mocktestcompany.testcertificationpart where idTestCertification = %(testCert)s order by TestCertificationPartSequenceNumber asc'
+    cursor.execute(cmd, testCertification, False)
+    return cursor
+  
 def getTestCentre(city):
     cursor.execute('SELECT idTestCentre FROM testcentre where testcentre.TestCentreCity = %(country)s ORDER BY RAND() LIMIT 1', {'country': city['city']}, False)
     output = 0
