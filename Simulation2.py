@@ -59,3 +59,5 @@ def simulate():
 							if(PartPassed==False): resit = True
 							#if the test outcome was bad
 								#-do it all again-
+
+simulate()

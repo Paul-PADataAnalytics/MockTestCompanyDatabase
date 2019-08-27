@@ -45,5 +45,3 @@ def newCustomerTestPartResult(idCustomerVisit):
     #TODO: Implement TestPartResults
     customerTestPartResultOutcome = random.choice(['Success','Success','Success','Success','Success','Success','Success','Failure'])
     DB.newTestOutcome
-
-print(newCustomerVisit(1,dt.date(2019,1,1)))
