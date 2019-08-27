@@ -6,7 +6,7 @@ mydb = mysql.connector.connect(
   passwd="Butts4141!",
   database='MockTestCompany'
 )
-cursor = mydb.cursor(dictionary=True)
+cursor = mydb.cursor(dictionary=True, buffered=True)
 
 def newCustomer(custname, address, acity, postcode, acountry, email):
     cmd = 'insert into customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
@@ -15,8 +15,8 @@ def newCustomer(custname, address, acity, postcode, acountry, email):
     return cursor._last_insert_id
 
 def newBooking(customerID, testCentreID, testCertificationPart, simulationDate):
-    cmd = 'insert into CustomerBooking(idTestCentre, CustomerBookingDateTime, idTestCertificationPart, idCustomer) VALUES (%s, %s, %s, %s);'
-    cursor.execute(cmd, (testCentreID, simulationDate, testCertificationPart, customerID), False)
+    cmd = 'insert into CustomerBooking(idTestCentre, CustomerBookingDateTime, idTestCertificationPart, idCustomer) VALUES (%(a)s, %(b)s, %(c)s, %(d)s);'
+    cursor.execute(cmd, {'a': testCentreID, 'b': simulationDate, 'c':testCertificationPart['idTestCertificationPart'], 'd':customerID}, False)
     return cursor._last_insert_id
 
 def getRandomCustomerIDFromCity(city):
@@ -28,7 +28,7 @@ def getRandomCustomerIDFromCity(city):
     return output
 
 def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
-    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s ,%s)'
+    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s , %s, %s)'
     cursor.execute(cmd, (customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID), False)
     return cursor._last_insert_id  
 
@@ -51,8 +51,8 @@ def getCertificationNotTaken(customerID):
     print(1)
 
 def getTestCertParts(testCertification):
-    cmd = 'SELECT * FROM mocktestcompany.testcertificationpart where idTestCertification = %(testCert)s order by TestCertificationPartSequenceNumber asc'
-    cursor.execute(cmd, testCertification, False)
+    cmd = 'SELECT * FROM mocktestcompany.testcertificationpart where idTestCertification = %(testcert)s order by TestCertificationPartSequenceNumber asc'
+    cursor.execute(cmd, {'testcert': testCertification}, False)
     return cursor
   
 def getTestCentre(city):
@@ -84,3 +84,5 @@ testdata = {'city': 'Tamvo', 'country': 'Loytehroa'}
 #print(getTestCentre(testdata))
 #print(getCertPrice(4))
 #print(getResitPrice(27))
+
+#print(getTestCertParts(1))

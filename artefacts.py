@@ -5,7 +5,7 @@ import datetime as dt
 import random
 
 def newAddress(g, city):
-    pc = g.zipcode() 
+    pc = g.postcode()
     output =  g.building_number()
     output += ' '  + g.street_name() 
     output += ', ' + city['city']
@@ -17,7 +17,7 @@ def newCustomer(g, city):
     addr, pc = newAddress(g, city)
     custname = g.name()
     email = custname.replace(' ','.') + str(g.random_digit()) + '@' + g.domain_name()
-    return custname, addr, city['city'], pc, city['country'], email
+    return DB.newCustomer(custname, addr, city['city'], pc, city['country'], email)
 
 def newIDRequest(VisitID, shittynessfactor):
     if(random.random()<shittynessfactor):
