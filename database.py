@@ -19,6 +19,30 @@ def newBooking(customerID, testCentreID, testCertificationPart, simulationDate):
     cursor.execute(cmd, {'a': testCentreID, 'b': simulationDate, 'c':testCertificationPart['idTestCertificationPart'], 'd':customerID}, False)
     return cursor._last_insert_id
 
+def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
+    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s , %s, %s)'
+    cursor.execute(cmd, (customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID), False)
+    mydb.commit()
+    return cursor._last_insert_id  
+
+def newPresentedID(visitID, atype, valid, comments):
+    cmd = 'INSERT INTO presentedidentification (`idCustomerVisit`, `PresentedIdentificationType`, `PresentedIdentificationValid`, `PresentedIdentificationComments`) VALUES (%s, %s, %s ,%s)'
+    cursor.execute(cmd, (visitID, atype, valid, comments), False)
+    mydb.commit()
+    return cursor._last_insert_id
+
+def newVisit(bookingID, arrivalDateTime):
+    cmd = 'INSERT INTO customervisit (`idCustomerBooking`, `CustomerVisitArrivalTime`) VALUES (%s, %s)'
+    cursor.execute(cmd, (bookingID, arrivalDateTime), False)
+    mydb.commit()
+    return cursor._last_insert_id
+
+def newCustomerTestPartResult(visitID, outcome):
+    cmd = 'INSERT INTO customertestpartresult (`idCustomerVisit`, `CustomerTestPartResultOutcome`) VALUES (%s, %s)'
+    cursor.execute(cmd, (visitID, outcome), False)
+    mydb.commit()
+    return cursor._last_insert_id
+
 def getRandomCustomerIDFromCity(city):
     cursor.execute('SELECT idCustomer FROM customer where CustomerCity = %(city)s ORDER BY RAND() LIMIT 1', {'city': city['city']}, False)
     output = 0
@@ -26,26 +50,6 @@ def getRandomCustomerIDFromCity(city):
       output = row['idCustomer']
       break
     return output
-
-def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
-    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s , %s, %s)'
-    cursor.execute(cmd, (customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID), False)
-    return cursor._last_insert_id  
-
-def newPresentedID(visitID, atype, valid, comments):
-    cmd = 'INSERT INTO presentedidentification (`idCustomerVisit`, `PresentedIdentificationType`, `PresentedIdentificationValid`, `PresentedIdentificationComments`) VALUES (%s, %s, %s ,%s)'
-    cursor.execute(cmd, (visitID, atype, valid, comments), False)
-    return cursor._last_insert_id
-
-def newVisit(bookingID, arrivalDateTime):
-    cmd = 'INSERT INTO customervisit (`CustomerVisitArrivalTime`, `idCustomerBooking`) VALUES (%s, %s)'
-    cursor.execute(cmd, (bookingID, arrivalDateTime), False)
-    return cursor._last_insert_id
-
-def newTestOutcome(visitID, outcome):
-    cmd = 'INSERT INTO customertestpartresult (`idCustomerVisit`, `CustomerTestPartResultOutcome`) VALUES (%s, %s)'
-    cursor.execute(cmd, (visitID, outcome), False)
-    return cursor._last_insert_id
 
 def getCertificationNotTaken(customerID):
     print(1)
@@ -71,8 +75,8 @@ def getCertPrice(certificationID):
       break
     return output
 
-def getResitPrice(certificationPartID):
-    cursor.execute('SELECT TestCertificationRetestPrice FROM testcertificationpart where idTestCertificationPart = %(certpart)s', {'certpart': certificationPartID}, False)
+def getResitPrice(testCertificationPart):
+    cursor.execute('SELECT TestCertificationRetestPrice FROM testcertificationpart where idTestCertificationPart = %(certpart)s', {'certpart': testCertificationPart['idTestCertificationPart']}, False)
     output = 0
     for row in cursor:
       output = row['TestCertificationRetestPrice']

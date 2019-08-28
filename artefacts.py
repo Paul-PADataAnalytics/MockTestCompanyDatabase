@@ -20,12 +20,13 @@ def newCustomer(g, city):
     return DB.newCustomer(custname, addr, city['city'], pc, city['country'], email)
 
 def newIDRequest(VisitID, shittynessfactor):
-    if(random.random()<shittynessfactor):
+    if(random.random()>shittynessfactor):
         visitSuccess = True
+        notes = ''
     else:
         visitSuccess = False
         notes = random.choice(world.badIDNotes)
-        presentedID = random.choice(world.presentedIdentificationTypes)
+    presentedID = random.choice(world.presentedIdentificationTypes)
     DB.newPresentedID(VisitID,presentedID,visitSuccess,notes)
     return visitSuccess
     
@@ -44,4 +45,5 @@ def newCustomerVisit(bookingID, date):
 def newCustomerTestPartResult(idCustomerVisit):
     #TODO: Implement TestPartResults
     customerTestPartResultOutcome = random.choice(['Success','Success','Success','Success','Success','Success','Success','Failure'])
-    DB.newTestOutcome
+    DB.newCustomerTestPartResult(idCustomerVisit,customerTestPartResultOutcome)
+    return customerTestPartResultOutcome

@@ -147,7 +147,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `MockTestCompany`.`CustomerVisit` ;
 
 CREATE TABLE IF NOT EXISTS `MockTestCompany`.`CustomerVisit` (
-  `idCustomerVisit` INT UNSIGNED NOT NULL,
+  `idCustomerVisit` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `CustomerVisitArrivalTime` DATETIME NOT NULL,
   `idCustomerBooking` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idCustomerVisit`),

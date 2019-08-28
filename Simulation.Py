@@ -16,8 +16,9 @@ def simulate():
 	if configState == 'Test': 
 		import fakerBase as DB
 	for dayDate in rrule(DAILY, dtstart=world.DateStart, until=world.DateStart):
+		print(dayDate)
 		for city in world.geography:
-
+			print(city['city'])
 			#per day, per city
 			if(dayDate.isoweekday()>5):
 				customers = ((int(city['population'])*3)*.2) / 104 #weekend split 20% of yearly customers over 104 days
@@ -25,8 +26,9 @@ def simulate():
 				customers = ((int(city['population'])*3)*.8) / 261 #weekday split 80% of yearly custoemrs over 261 days
 
 			fakeCountry = Faker(world.countryLocales[city['country']]) #object to generate country style fake items
-
+			customerCount = 0
 			for x in range(1,int(customers)):
+				customerCount += 1
 				bookingDate = dayDate
 
 				#per day, per customer, per city
@@ -39,10 +41,10 @@ def simulate():
 				testCertification = 1
 				#for each test part
 				for testpart in DB.getTestCertParts(testCertification):
-					PartPassed = False
+					PartPassed = 'Failure'
 					firstRun = True
 					resit = False
-					while PartPassed is False:
+					while PartPassed is 'Failure':
 						#Create a Booking
 						bookingID = DB.newBooking(customerID, TestCentre, testpart, bookingDate)
 						#Create a payment
@@ -52,14 +54,15 @@ def simulate():
 						if(resit): art.newCustomerPayment(bookingID, DB.getResitPrice(testpart))
 						#Create a visit
 						visit = art.newCustomerVisit(bookingID, bookingDate)
-						bookingDate =+ random.choice([2,2,2,2,3,3,4,4,5,6,7,8,9])
+						bookingDate = bookingDate + dt.timedelta(days=random.choice([2,2,2,2,3,3,4,4,5,6,7,8,9]))
 						#create some identification with a result
 						presentedIDSuccess = art.newIDRequest(visit, world.customerGeneralShittyness[city['country']])
 						if(presentedIDSuccess):
 							#if test result identification was right, create a test outcome
 							PartPassed = art.newCustomerTestPartResult(visit)
-							if(PartPassed==False): resit = True
+							if(PartPassed=='Failure'): resit = True
 							#if the test outcome was bad
 								#-do it all again-
+			print(customerCount)
 
 simulate()
