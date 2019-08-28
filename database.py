@@ -10,7 +10,7 @@ cursor = mydb.cursor(dictionary=True, buffered=True)
 
 def newCustomer(custname, address, acity, postcode, acountry, email):
     cmd = 'insert into customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
-    cursor.execute(cmd, (custname, address, acity, postcode, acountry, email), False)
+    cursor.execute(cmd, (custname, address, acity, postcode, email, acountry), False)
     mydb.commit()
     return cursor._last_insert_id
 
