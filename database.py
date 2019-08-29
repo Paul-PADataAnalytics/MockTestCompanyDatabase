@@ -6,7 +6,7 @@ mydb = mysql.connector.connect(
   passwd="Butts4141!",
   database='MockTestCompany'
 )
-cursor = mydb.cursor(dictionary=True, buffered=True)
+cursor = mydb.cursor(dictionary=True, buffered=True, )
 
 def newCustomer(custname, address, acity, postcode, acountry, email):
     cmd = 'insert into customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
