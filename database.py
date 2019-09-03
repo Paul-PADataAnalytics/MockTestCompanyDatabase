@@ -4,7 +4,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="Butts4141!",
-  database='MockTestCompany'
+  database='MockTestCompanyMemory'
 )
 cursor = mydb.cursor(dictionary=True, buffered=True, )
 
@@ -17,6 +17,7 @@ def newCustomer(custname, address, acity, postcode, acountry, email):
 def newBooking(customerID, testCentreID, testCertificationPart, simulationDate):
     cmd = 'insert into CustomerBooking(idTestCentre, CustomerBookingDateTime, idTestCertificationPart, idCustomer) VALUES (%(a)s, %(b)s, %(c)s, %(d)s);'
     cursor.execute(cmd, {'a': testCentreID, 'b': simulationDate, 'c':testCertificationPart['idTestCertificationPart'], 'd':customerID}, False)
+    mydb.commit()
     return cursor._last_insert_id
 
 def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
@@ -55,7 +56,7 @@ def getCertificationNotTaken(customerID):
     print(1)
 
 def getTestCertParts(testCertification):
-    cmd = 'SELECT * FROM mocktestcompany.testcertificationpart where idTestCertification = %(testcert)s order by TestCertificationPartSequenceNumber asc'
+    cmd = 'SELECT * FROM testcertificationpart where idTestCertification = %(testcert)s order by TestCertificationPartSequenceNumber asc'
     cursor.execute(cmd, {'testcert': testCertification}, False)
     return cursor
   
