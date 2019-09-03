@@ -1,10 +1,10 @@
 SET FOREIGN_KEY_CHECKS=0;
-insert into mocktestcompany1.customer SELECT * FROM mocktestcompany.customer;
-insert into mocktestcompany1.customerbooking SELECT * FROM mocktestcompany.customerbooking;
-insert into mocktestcompany1.customerpayment SELECT * FROM mocktestcompany.customerpayment;
-insert into mocktestcompany1.customertestpartresult SELECT * FROM mocktestcompany.customertestpartresult;
-insert into mocktestcompany1.customervisit SELECT * FROM mocktestcompany.customervisit;
-insert into mocktestcompany1.presentedidentification SELECT * FROM mocktestcompany.presentedidentification;
+insert into mocktestcompany.customer SELECT * FROM mocktestcompanymemory.customer;
+insert into mocktestcompany.customerbooking SELECT * FROM mocktestcompanymemory.customerbooking;
+insert into mocktestcompany.customerpayment SELECT * FROM mocktestcompanymemory.customerpayment;
+insert into mocktestcompany.customertestpartresult SELECT * FROM mocktestcompanymemory.customertestpartresult;
+insert into mocktestcompany.customervisit SELECT * FROM mocktestcompanymemory.customervisit;
+insert into mocktestcompany.presentedidentification SELECT * FROM mocktestcompanymemory.presentedidentification;
 SET FOREIGN_KEY_CHECKS=1;
 
 SELECT count(*) val, 'customers' TableName FROM mocktestcompany1.customer UNION ALL

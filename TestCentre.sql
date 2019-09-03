@@ -1,52 +1,53 @@
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Wuchu', 'Wuchu', 'Gotyadgee', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Sirke', 'Sirke', 'Gotyadgee', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Jilli', 'Jilli', 'Loytehroa', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Capdu', 'Capdu', 'Gotyadgee', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Qurli', 'Qurli', 'Loytehroa', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Wahns', 'Wahns', 'Loytehroa', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Zutne', 'Zutne', 'Fopliwfoo', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Macru', 'Macru', 'Gotyadgee', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Puwka', 'Puwka', 'Loytehroa', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Gerfed', 'Gerfed', 'Fopliwfoo', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Abcd Tamvo', 'Tamvo', 'Loytehroa', 'Abcd');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Jilli', 'Jilli', 'Loytehroa', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Qurli', 'Qurli', 'Loytehroa', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Wahns', 'Wahns', 'Loytehroa', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Puwka', 'Puwka', 'Loytehroa', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Tamvo', 'Tamvo', 'Loytehroa', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Henna', 'Henna', 'Resyurdui', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Proled', 'Proled', 'Pufyoffio', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Gumfe', 'Gumfe', 'Semsortee', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Bubri', 'Bubri', 'Pufyoffio', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Nuvso', 'Nuvso', 'Semsortee', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Burtie', 'Burtie', 'Semsortee', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Feerds Quisxy', 'Quisxy', 'Resyurdui', 'Feerds');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Henna', 'Henna', 'Resyurdui', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Gumfe', 'Gumfe', 'Semsortee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Nuvso', 'Nuvso', 'Semsortee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Burtie', 'Burtie', 'Semsortee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Quisxy', 'Quisxy', 'Resyurdui', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Wuchu', 'Wuchu', 'Gotyadgee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Sirke', 'Sirke', 'Gotyadgee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Capdu', 'Capdu', 'Gotyadgee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Zutne', 'Zutne', 'Fopliwfoo', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Macru', 'Macru', 'Gotyadgee', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Gerfed', 'Gerfed', 'Fopliwfoo', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Texgo', 'Texgo', 'Tilpetpae', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Layvo', 'Layvo', 'Tilpetpae', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pruisly Pepxi', 'Pepxi', 'Tilpetpae', 'Pruisly');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Henna', 'Henna', 'Resyurdui', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Quisxy', 'Quisxy', 'Resyurdui', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Jilli', 'Jilli', 'Loytehroa', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Qurli', 'Qurli', 'Loytehroa', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Wahns', 'Wahns', 'Loytehroa', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Puwka', 'Puwka', 'Loytehroa', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Tamvo', 'Tamvo', 'Loytehroa', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Proled', 'Proled', 'Pufyoffio', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Mertuf Bubri', 'Bubri', 'Pufyoffio', 'Mertuf');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Henna', 'Henna', 'Resyurdui', 'Pestrofed');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Jilli', 'Jilli', 'Loytehroa', 'Pestrofed');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Proled', 'Proled', 'Pufyoffio', 'Pestrofed');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Gumfe', 'Gumfe', 'Semsortee', 'Pestrofed');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Wuchu', 'Wuchu', 'Gotyadgee', 'Pestrofed');
-INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES ('Pestrofed Sirke', 'Sirke', 'Gotyadgee', 'Pestrofed');
+INSERT INTO `MockTestCompany`.`TestCentre` (`TestCentreName`, `TestCentreCity`, `TestCentreCountry`, `TestCentreCompany`) VALUES 
+('Abcd Wuchu', 'Wuchu', 'Gotyadgee', 'Abcd')
+,('Abcd Sirke', 'Sirke', 'Gotyadgee', 'Abcd')
+,('Abcd Jilli', 'Jilli', 'Loytehroa', 'Abcd')
+,('Abcd Capdu', 'Capdu', 'Gotyadgee', 'Abcd')
+,('Abcd Qurli', 'Qurli', 'Loytehroa', 'Abcd')
+,('Abcd Wahns', 'Wahns', 'Loytehroa', 'Abcd')
+,('Abcd Zutne', 'Zutne', 'Fopliwfoo', 'Abcd')
+,('Abcd Macru', 'Macru', 'Gotyadgee', 'Abcd')
+,('Abcd Puwka', 'Puwka', 'Loytehroa', 'Abcd')
+,('Abcd Gerfed', 'Gerfed', 'Fopliwfoo', 'Abcd')
+,('Abcd Tamvo', 'Tamvo', 'Loytehroa', 'Abcd')
+,('Feerds Jilli', 'Jilli', 'Loytehroa', 'Feerds')
+,('Feerds Qurli', 'Qurli', 'Loytehroa', 'Feerds')
+,('Feerds Wahns', 'Wahns', 'Loytehroa', 'Feerds')
+,('Feerds Puwka', 'Puwka', 'Loytehroa', 'Feerds')
+,('Feerds Tamvo', 'Tamvo', 'Loytehroa', 'Feerds')
+,('Feerds Henna', 'Henna', 'Resyurdui', 'Feerds')
+,('Feerds Proled', 'Proled', 'Pufyoffio', 'Feerds')
+,('Feerds Gumfe', 'Gumfe', 'Semsortee', 'Feerds')
+,('Feerds Bubri', 'Bubri', 'Pufyoffio', 'Feerds')
+,('Feerds Nuvso', 'Nuvso', 'Semsortee', 'Feerds')
+,('Feerds Burtie', 'Burtie', 'Semsortee', 'Feerds')
+,('Feerds Quisxy', 'Quisxy', 'Resyurdui', 'Feerds')
+,('Pruisly Henna', 'Henna', 'Resyurdui', 'Pruisly')
+,('Pruisly Gumfe', 'Gumfe', 'Semsortee', 'Pruisly')
+,('Pruisly Nuvso', 'Nuvso', 'Semsortee', 'Pruisly')
+,('Pruisly Burtie', 'Burtie', 'Semsortee', 'Pruisly')
+,('Pruisly Quisxy', 'Quisxy', 'Resyurdui', 'Pruisly')
+,('Pruisly Wuchu', 'Wuchu', 'Gotyadgee', 'Pruisly')
+,('Pruisly Sirke', 'Sirke', 'Gotyadgee', 'Pruisly')
+,('Pruisly Capdu', 'Capdu', 'Gotyadgee', 'Pruisly')
+,('Pruisly Zutne', 'Zutne', 'Fopliwfoo', 'Pruisly')
+,('Pruisly Macru', 'Macru', 'Gotyadgee', 'Pruisly')
+,('Pruisly Gerfed', 'Gerfed', 'Fopliwfoo', 'Pruisly')
+,('Pruisly Texgo', 'Texgo', 'Tilpetpae', 'Pruisly')
+,('Pruisly Layvo', 'Layvo', 'Tilpetpae', 'Pruisly')
+,('Pruisly Pepxi', 'Pepxi', 'Tilpetpae', 'Pruisly')
+,('Mertuf Henna', 'Henna', 'Resyurdui', 'Mertuf')
+,('Mertuf Quisxy', 'Quisxy', 'Resyurdui', 'Mertuf')
+,('Mertuf Jilli', 'Jilli', 'Loytehroa', 'Mertuf')
+,('Mertuf Qurli', 'Qurli', 'Loytehroa', 'Mertuf')
+,('Mertuf Wahns', 'Wahns', 'Loytehroa', 'Mertuf')
+,('Mertuf Puwka', 'Puwka', 'Loytehroa', 'Mertuf')
+,('Mertuf Tamvo', 'Tamvo', 'Loytehroa', 'Mertuf')
+,('Mertuf Proled', 'Proled', 'Pufyoffio', 'Mertuf')
+,('Mertuf Bubri', 'Bubri', 'Pufyoffio', 'Mertuf')
+,('Pestrofed Henna', 'Henna', 'Resyurdui', 'Pestrofed')
+,('Pestrofed Jilli', 'Jilli', 'Loytehroa', 'Pestrofed')
+,('Pestrofed Proled', 'Proled', 'Pufyoffio', 'Pestrofed')
+,('Pestrofed Gumfe', 'Gumfe', 'Semsortee', 'Pestrofed')
+,('Pestrofed Wuchu', 'Wuchu', 'Gotyadgee', 'Pestrofed')
+,('Pestrofed Sirke', 'Sirke', 'Gotyadgee', 'Pestrofed')

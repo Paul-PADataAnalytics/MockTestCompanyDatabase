@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
 cursor = mydb.cursor(dictionary=True, buffered=True, )
 
 def newCustomer(custname, address, acity, postcode, acountry, email):
-    cmd = 'insert into customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
+    cmd = 'insert into Customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
     cursor.execute(cmd, (custname, address, acity, postcode, email, acountry), False)
     mydb.commit()
     return cursor._last_insert_id
@@ -21,31 +21,31 @@ def newBooking(customerID, testCentreID, testCertificationPart, simulationDate):
     return cursor._last_insert_id
 
 def newPayment(customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID):
-    cmd = 'INSERT INTO customerpayment (CustomerPaymentAmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s , %s, %s)'
+    cmd = 'INSERT INTO CustomerPayment (CustomerPaymentAmount, idCustomerBooking, CustomerPaymentMethod, CustomerPaymentResult, CustomerPaymentExternalID) VALUES (%s, %s, %s , %s, %s)'
     cursor.execute(cmd, (customerPaymentAmount, idCustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID), False)
     mydb.commit()
     return cursor._last_insert_id  
 
 def newPresentedID(visitID, atype, valid, comments):
-    cmd = 'INSERT INTO presentedidentification (`idCustomerVisit`, `PresentedIdentificationType`, `PresentedIdentificationValid`, `PresentedIdentificationComments`) VALUES (%s, %s, %s ,%s)'
+    cmd = 'INSERT INTO PresentedIdentification (`idCustomerVisit`, `PresentedIdentificationType`, `PresentedIdentificationValid`, `PresentedIdentificationComments`) VALUES (%s, %s, %s ,%s)'
     cursor.execute(cmd, (visitID, atype, valid, comments), False)
     mydb.commit()
     return cursor._last_insert_id
 
 def newVisit(bookingID, arrivalDateTime):
-    cmd = 'INSERT INTO customervisit (`idCustomerBooking`, `CustomerVisitArrivalTime`) VALUES (%s, %s)'
+    cmd = 'INSERT INTO CustomerVisit (`idCustomerBooking`, `CustomerVisitArrivalTime`) VALUES (%s, %s)'
     cursor.execute(cmd, (bookingID, arrivalDateTime), False)
     mydb.commit()
     return cursor._last_insert_id
 
 def newCustomerTestPartResult(visitID, outcome):
-    cmd = 'INSERT INTO customertestpartresult (`idCustomerVisit`, `CustomerTestPartResultOutcome`) VALUES (%s, %s)'
+    cmd = 'INSERT INTO CustomerTestPartResult (`idCustomerVisit`, `CustomerTestPartResultOutcome`) VALUES (%s, %s)'
     cursor.execute(cmd, (visitID, outcome), False)
     mydb.commit()
     return cursor._last_insert_id
 
 def getRandomCustomerIDFromCity(city):
-    cursor.execute('SELECT idCustomer FROM customer where CustomerCity = %(city)s ORDER BY RAND() LIMIT 1', {'city': city['city']}, False)
+    cursor.execute('SELECT idCustomer FROM Customer where CustomerCity = %(city)s ORDER BY RAND() LIMIT 1', {'city': city['city']}, False)
     output = 0
     for row in cursor:
       output = row['idCustomer']
@@ -56,12 +56,12 @@ def getCertificationNotTaken(customerID):
     print(1)
 
 def getTestCertParts(testCertification):
-    cmd = 'SELECT * FROM testcertificationpart where idTestCertification = %(testcert)s order by TestCertificationPartSequenceNumber asc'
+    cmd = 'SELECT * FROM TestCertificationPart where idTestCertification = %(testcert)s order by TestCertificationPartSequenceNumber asc'
     cursor.execute(cmd, {'testcert': testCertification}, False)
     return cursor
   
 def getTestCentre(city):
-    cursor.execute('SELECT idTestCentre FROM testcentre where testcentre.TestCentreCity = %(country)s ORDER BY RAND() LIMIT 1', {'country': city['city']}, False)
+    cursor.execute('SELECT idTestCentre FROM TestCentre where TestCentre.TestCentreCity = %(country)s ORDER BY RAND() LIMIT 1', {'country': city['city']}, False)
     output = 0
     for row in cursor:
       output = row['idTestCentre']
@@ -69,7 +69,7 @@ def getTestCentre(city):
     return output
 
 def getCertPrice(certificationID):
-    cursor.execute('SELECT TestCertifcationPrice FROM testcertification Where idTestCertification = %(certid)s', {'certid': certificationID}, False)
+    cursor.execute('SELECT TestCertifcationPrice FROM TestCertification Where idTestCertification = %(certid)s', {'certid': certificationID}, False)
     output = 0
     for row in cursor:
       output = row['TestCertifcationPrice']
@@ -77,7 +77,7 @@ def getCertPrice(certificationID):
     return output
 
 def getResitPrice(testCertificationPart):
-    cursor.execute('SELECT TestCertificationRetestPrice FROM testcertificationpart where idTestCertificationPart = %(certpart)s', {'certpart': testCertificationPart['idTestCertificationPart']}, False)
+    cursor.execute('SELECT TestCertificationRetestPrice FROM TestCertificationPart where idTestCertificationPart = %(certpart)s', {'certpart': testCertificationPart['idTestCertificationPart']}, False)
     output = 0
     for row in cursor:
       output = row['TestCertificationRetestPrice']
