@@ -4,7 +4,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="Butts4141!",
-  database='MockTestCompanyMemory'
+  database='MockTestCompany'
 )
 cursor = mydb.cursor(dictionary=True, buffered=True, )
 
@@ -89,5 +89,3 @@ testdata = {'city': 'Tamvo', 'country': 'Loytehroa'}
 #print(getTestCentre(testdata))
 #print(getCertPrice(4))
 #print(getResitPrice(27))
-
-#print(getTestCertParts(1))

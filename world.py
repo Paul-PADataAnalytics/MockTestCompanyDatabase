@@ -46,5 +46,6 @@ DateStart = dt.date(2016,1,1)
 DateEnd = dt.date(2018,11,30)
 
 presentedIdentificationTypes = ['Passport', 'Photo ID', 'Driving Licence', 'Government Papers', 'Visa', 'Other']
-badIDNotes = ["Names didn't match", "ID expired", "Not the customers own ID", "ID in poor condition and couldn't be identified."]
+badIDNotes = ["Names didn't match", "ID expired", "Not the customers own ID", "ID in poor condition and couldn't be identified.", "Fake ID"]
+badIDSelection = [0,0,1,1,1,1,2,2,3,4]
 customerPaymentMethods = ['Debit Card', 'Money Order', 'Credit Order', 'Credit Card', 'Postal Order', 'Cash']

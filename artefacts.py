@@ -20,12 +20,14 @@ def newCustomer(g, city):
     return DB.newCustomer(custname, addr, city['city'], pc, city['country'], email)
 
 def newIDRequest(VisitID, shittynessfactor):
-    if(random.random()>shittynessfactor):
+    r = random.random()
+    if(r > shittynessfactor):
         visitSuccess = True
         notes = ''
     else:
         visitSuccess = False
-        notes = random.choice(world.badIDNotes)
+        notes = world.badIDNotes[random.choice(world.badIDSelection)]
+        #print(notes)
     presentedID = random.choice(world.presentedIdentificationTypes)
     DB.newPresentedID(VisitID,presentedID,visitSuccess,notes)
     return visitSuccess
