@@ -16,12 +16,15 @@ import sys
 cityname = 'Henna'
 localdebug = False
 
-def simulateCustomers(cityname):
-    totalcustomers = 0
-    monthlyTweakAmount = 0
+def simulateCity(cityname):
     for cit in world.geography:
         if cit['city'] == cityname: city = cit 
     fakeCountry = Faker(world.countryLocales[city['country']]) #object to generate country style fake items
+    return simulateMonths(fakeCountry, city)
+
+def simulateMonths(fakeCountry, city):
+    totalcustomers = 0
+    monthlyTweakAmount = 0
     for monthDate in rrule(MONTHLY, dtstart=world.DateStart, until=world.DateEnd):
         if localdebug: print(str(monthDate) + ' ' + str(monthlyTweakAmount))
         if monthlyTweakAmount >= 5:
@@ -72,13 +75,12 @@ def simulateCustomers(cityname):
                                 if(PartPassed=='Failure'): resit = True
                                 #if the test outcome was bad
                                     #-do it all again-
-    return totalcustomers
 
 def last_day_of_month(any_day):
     next_month = any_day.replace(day=28) + dt.timedelta(days=4)  # this will never fail
     return next_month - dt.timedelta(days=next_month.day)
 
 a = dt.datetime.now()
-c = simulateCustomers(cityname)
+c = simulateCity(cityname)
 b = (dt.datetime.now() - a).total_seconds()
 print(str(c) + ' ' + str(b))
