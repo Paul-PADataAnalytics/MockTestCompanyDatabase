@@ -27,7 +27,7 @@ def simulateMonths(fakeCountry, city):
     monthlyTweakAmount = 0
     for monthDate in rrule(MONTHLY, dtstart=world.DateStart, until=world.DateEnd):
         #if localdebug: print(str(monthDate) + ' ' + str(monthlyTweakAmount))
-        if monthDate-1%3 == 0: 
+        if (monthDate.month-1)%3 == 0: 
             if monthlyTweakAmount >= 5:
                 monthlyTweakAmount += random.randrange(0,2)-2
                 #if localdebug: print('reduce ' + str(monthlyTweakAmount))
@@ -38,7 +38,7 @@ def simulateMonths(fakeCountry, city):
                 else:
                     monthlyTweakAmount += int((random.randrange(0,10)-5)/2)
                     #if localdebug: print('else ' + str(monthlyTweakAmount))
-        customers = abs(int((int(city['customers'])/2610)+((int(city['customers'])/2610)*(monthlyTweakAmount*0.1))))
+        customers = abs(int((int(city['customers'])/2610)+((int(city['customers'])/4610)*(monthlyTweakAmount*0.1))))
         #if localdebug: print(str(monthDate) + ' ' + str(monthlyTweakAmount) + ' ' + str(customers)) 
         totalcustomers += simulateDays(fakeCountry, customers, city, monthDate)
         
@@ -51,7 +51,7 @@ def simulateDays(fakeCountry, customers, city, startOfMonth):
     return dailycustomers
 
 def simulateCustomer(fakeCountry, city, date):
-    bookingDate = dayDate
+    bookingDate = date
     TestCentre = DB.getTestCentre(city)
     customerID = art.newCustomer(fakeCountry, city)
     testCertification = random.randrange(1,8,1)
