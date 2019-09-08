@@ -32,9 +32,9 @@ def newPresentedID(visitID, atype, valid, comments):
     mydb.commit()
     return cursor._last_insert_id
 
-def newVisit(bookingID, arrivalDateTime):
-    cmd = 'INSERT INTO CustomerVisit (`idCustomerBooking`, `CustomerVisitArrivalTime`) VALUES (%s, %s)'
-    cursor.execute(cmd, (bookingID, arrivalDateTime), False)
+def newVisit(bookingID, arrivalDateTime, outcome):
+    cmd = 'INSERT INTO CustomerVisit (`idCustomerBooking`, `CustomerVisitArrivalTime`, `CustomerVisitOutcome`) VALUES (%s, %s, %s)'
+    cursor.execute(cmd, (bookingID, arrivalDateTime, outcome), False)
     mydb.commit()
     return cursor._last_insert_id
 

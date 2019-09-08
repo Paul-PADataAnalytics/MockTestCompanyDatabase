@@ -40,9 +40,9 @@ def newCustomerPayment(CustomerBooking, value):
     DB.newPayment(customerPaymentAmount, CustomerBooking, randomPaymentType, customerPaymentResult, customerPaymentExternalID)
     return newCustomerPayment
 
-def newCustomerVisit(bookingID, date):
+def newCustomerVisit(bookingID, date, outcome):
     customerVisitArrivalTime = dt.datetime(date.year,date.month,date.day, (8+random.randrange(0,8,1)), random.randrange(0,4,1)*15)
-    return DB.newVisit(bookingID,customerVisitArrivalTime)
+    return DB.newVisit(bookingID,customerVisitArrivalTime, outcome)
 
 def newCustomerTestPartResult(idCustomerVisit):
     #TODO: Implement TestPartResults

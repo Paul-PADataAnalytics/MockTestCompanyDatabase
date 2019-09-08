@@ -6,7 +6,7 @@ import subprocess
 import shlex
 import datetime
 
-pool = ThreadPool(mp.cpu_count()*2)
+pool = ThreadPool(mp.cpu_count()-1)
 
 def simulate():
 	a = datetime.datetime.now()
@@ -25,7 +25,7 @@ def simulate():
 	print(datetime.datetime.now() - a)
 		
 def simulateCustomer(city):
-    p = subprocess.Popen(shlex.split('python C:/MockTestCompanyDatabase/SimulateCustomer.py ' + city), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(shlex.split('python ./SimulateCustomer.py ' + city), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
     return out, err
 

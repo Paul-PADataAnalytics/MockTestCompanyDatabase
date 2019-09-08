@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`Customer` (
     `CustomerEmailAddress` VARCHAR(255)CHARACTER SET UTF8 NOT NULL,
     `CustomerCountry` VARCHAR(255)CHARACTER SET UTF8 NOT NULL,
     PRIMARY KEY (`idCustomer`)
-)  ENGINE = innodb DEFAULT CHARACTER SET=LATIN1 COMMENT='The people who take the tests at the test centres';
+)  ENGINE = MEMORY DEFAULT CHARACTER SET=LATIN1 COMMENT='The people who take the tests at the test centres';
 
 
 -- -----------------------------------------------------
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`TestCentre` (
   `TestCentreCountry` VARCHAR(255) NOT NULL,
   `TestCentreCompany` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`idTestCentre`))
-ENGINE = innodb
+ENGINE = MEMORY
 DEFAULT CHARACTER SET = latin1
 COMMENT = 'Represents the Place that at test takes place.';
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`TestMandate` (
   `TestMandateName` VARCHAR(255) NOT NULL,
   `TestMandateProfessionalBody` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idTestMandate`))
-ENGINE = innodb
+ENGINE = MEMORY
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`TestCertification` (
   CONSTRAINT `abc`
     FOREIGN KEY (`idTestMandate`)
     REFERENCES `MockTestCompany`.`TestMandate` (`idTestMandate`))
-ENGINE = innodb
+ENGINE = MEMORY
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`TestCertificationPart` (
     REFERENCES `MockTestCompany`.`TestCertification` (`idTestCertification`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb
+ENGINE = MEMORY
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`CustomerBooking` (
     REFERENCES `MockTestCompany`.`Customer` (`idCustomer`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb;
+ENGINE = MEMORY;
 
 
 -- -----------------------------------------------------
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`CustomerVisit` (
     REFERENCES `MockTestCompany`.`CustomerBooking` (`idCustomerBooking`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb;
+ENGINE = MEMORY;
 
 
 -- -----------------------------------------------------
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`PresentedIdentification` (
     REFERENCES `MockTestCompany`.`CustomerVisit` (`idCustomerVisit`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb;
+ENGINE = MEMORY;
 
 
 -- -----------------------------------------------------
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`CustomerPayment` (
     REFERENCES `MockTestCompany`.`CustomerBooking` (`idCustomerBooking`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb;
+ENGINE = MEMORY;
 
 
 -- -----------------------------------------------------
@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `MockTestCompany`.`CustomerTestPartResult` (
     REFERENCES `MockTestCompany`.`CustomerVisit` (`idCustomerVisit`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = innodb;
+ENGINE = MEMORY;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

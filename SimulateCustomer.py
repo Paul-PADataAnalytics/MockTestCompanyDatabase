@@ -65,7 +65,10 @@ def simulateCustomer(fakeCountry, city, date):
                 art.newCustomerPayment(bookingID, DB.getCertPrice(testCertification))
                 firstRun = False
             if(resit): art.newCustomerPayment(bookingID, DB.getResitPrice(testpart))
-            visit = art.newCustomerVisit(bookingID, bookingDate)
+            if (random.random() <= world.customerGeneralShittyness[city['country']]): 
+                visit = art.newCustomerVisit(bookingID, bookingDate, 0)    
+                return
+            visit = art.newCustomerVisit(bookingID, bookingDate, 1)
             bookingDate = bookingDate + dt.timedelta(days=random.choice([2,2,2,2,3,3,4,4,5,6,7,8,9]))
             presentedIDSuccess = art.newIDRequest(visit, world.customerGeneralShittyness[city['country']])
             if(presentedIDSuccess):
