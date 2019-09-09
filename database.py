@@ -8,9 +8,9 @@ mydb = mysql.connector.connect(
 )
 cursor = mydb.cursor(dictionary=True, buffered=True, )
 
-def newCustomer(custname, address, acity, postcode, acountry, email):
-    cmd = 'insert into Customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry) VALUES (%s, %s, %s, %s, %s, %s);'
-    cursor.execute(cmd, (custname, address, acity, postcode, email, acountry), False)
+def newCustomer(custname, address, acity, postcode, acountry, email, specialneeds):
+    cmd = 'insert into Customer(CustomerName, CustomerAddress, CustomerCity, CustomerPostCode, CustomerEmailAddress, CustomerCountry, CustomerSpecialNeeds) VALUES (%s, %s, %s, %s, %s, %s, %s);'
+    cursor.execute(cmd, (custname, address, acity, postcode, email, acountry, specialneeds), False)
     mydb.commit()
     return cursor._last_insert_id
 

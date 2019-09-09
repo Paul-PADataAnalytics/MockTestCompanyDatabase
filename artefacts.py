@@ -17,7 +17,11 @@ def newCustomer(g, city):
     addr, pc = newAddress(g, city)
     custname = g.name()
     email = custname.replace(' ','.') + str(g.random_digit()) + '@' + g.domain_name()
-    return DB.newCustomer(custname, addr, city['city'], pc, city['country'], email)
+    if (random.random() < 0.029):
+        specialneeds = 1
+    else:   
+        specialneeds = 0    
+    return DB.newCustomer(custname, addr, city['city'], pc, city['country'], email, specialneeds)
 
 def newIDRequest(VisitID, shittynessfactor):
     r = random.random()

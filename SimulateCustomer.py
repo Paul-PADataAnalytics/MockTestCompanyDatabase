@@ -38,7 +38,7 @@ def simulateMonths(fakeCountry, city):
                 else:
                     monthlyTweakAmount += int((random.randrange(0,10)-5)/2)
                     #if localdebug: print('else ' + str(monthlyTweakAmount))
-        customers = abs(int((int(city['customers'])/2610)+((int(city['customers'])/4610)*(monthlyTweakAmount*0.1))))
+        customers = abs(int((int(city['customers'])/6610)+((int(city['customers'])/6610)*(monthlyTweakAmount*0.1))))
         #if localdebug: print(str(monthDate) + ' ' + str(monthlyTweakAmount) + ' ' + str(customers)) 
         totalcustomers += simulateDays(fakeCountry, customers, city, monthDate)
         
