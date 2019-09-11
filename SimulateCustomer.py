@@ -12,8 +12,8 @@ import world as world
 import database as DB
 import sys
 
-#cityname = sys.argv[1]
-cityname = 'Henna'
+#cityname = 'Henna'
+cityname = sys.argv[1]
 localdebug = False
 
 def simulateCity(cityname):
