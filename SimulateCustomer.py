@@ -12,6 +12,8 @@ import world as world
 import database as DB
 import sys
 
+DB.buildConnection('MockTestCompany')
+
 #cityname = 'Henna'
 cityname = sys.argv[1]
 localdebug = False
@@ -79,7 +81,8 @@ def last_day_of_month(any_day):
     next_month = any_day.replace(day=28) + dt.timedelta(days=4)  # this will never fail
     return next_month - dt.timedelta(days=next_month.day)
 
-a = dt.datetime.now()
-c = simulateCity(cityname)
-b = (dt.datetime.now() - a).total_seconds()
-print(str(c) + ' ' + str(b))
+if(sys.argv[1]):
+    a = dt.datetime.now()
+    c = simulateCity(cityname)
+    b = (dt.datetime.now() - a).total_seconds()
+    print(str(c) + ' ' + str(b))

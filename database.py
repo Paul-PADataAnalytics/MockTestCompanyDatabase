@@ -1,11 +1,15 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  passwd="Butts4141!",
-  database='MockTestCompany'
-)
+mydb = ''
+
+def buildConnection(destination):
+    global mydb
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="Butts4141!",
+      database=destination
+    )
 cursor = mydb.cursor(dictionary=True, buffered=True, )
 
 def newCustomer(custname, address, acity, postcode, acountry, email, specialneeds):
